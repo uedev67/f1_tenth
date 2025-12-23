@@ -15,23 +15,29 @@
 
 ### 1. 도커 설치하기
    
- ```  sudo apt update
+ ```
+  sudo apt update
   sudo apt install -y docker.io
   sudo usermod -aG docker $USER
   newgrp docker
-
+```
 
 ### 2. 작업 이미지 생성
 
-   ```docker build -t f1tenth:sim -f Dockerfile.sim .```
+   ```
+   docker build -t f1tenth:sim -f Dockerfile.sim .
+   ```
 
 ### 3. 화면 권한 허용
 
-   ```xhost +local:docker```
+   ```
+   xhost +local:docker
+```
 
 ### 4. 컨테이너 실행
 
-   ```docker run -it \
+   ```
+    docker run -it \
     --net=host \
     --privileged \
     --env="DISPLAY" \
@@ -39,4 +45,5 @@
     --volume="$(pwd):/root/f1_team_5" \
     --name my_f1_sim \
     --rm \
-    f1tenth:sim```
+    f1tenth:sim
+```
