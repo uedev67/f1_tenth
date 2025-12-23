@@ -13,22 +13,22 @@
 ## Dockerfile.sim 사용법
 
 
-1. 도커 설치하기
+### 1. 도커 설치하기
    
  ```  sudo apt update
   sudo apt install -y docker.io
   sudo usermod -aG docker $USER
   newgrp docker```
 
-2. 작업 이미지 생성
+### 2. 작업 이미지 생성
 
    ```docker build -t f1tenth:sim -f Dockerfile.sim .```
 
-3. 화면 권한 허용
+### 3. 화면 권한 허용
 
    ```xhost +local:docker```
 
-4. 컨테이너 실행
+### 4. 컨테이너 실행
 
    ```docker run -it \
     --net=host \
