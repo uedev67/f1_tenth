@@ -16,11 +16,8 @@
 1. 도커 설치하기
    
  ```  sudo apt update
-
   sudo apt install -y docker.io
-
   sudo usermod -aG docker $USER
-
   newgrp docker```
 
 2. 작업 이미지 생성
