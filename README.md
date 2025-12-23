@@ -11,18 +11,19 @@
 * **포함된 툴:** F1TENTH Gym, RViz2, NumPy, SciPy, Pandas 등
 
 1. 도커 설치하기
-   sudo apt update
+   
+ bash```  sudo apt update
   sudo apt install -y docker.io
   sudo usermod -aG docker $USER
-  newgrp docker
+  newgrp docker```
 
-2. 작업 이미지 생성
+3. 작업 이미지 생성
    docker build -t f1tenth:sim -f Dockerfile.sim .
 
-3. 화면 권한 허용
+4. 화면 권한 허용
    xhost +local:docker
 
-4. 컨테이너 실행
+5. 컨테이너 실행
    docker run -it \
     --net=host \
     --privileged \
