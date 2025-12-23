@@ -17,23 +17,23 @@
    
  ```  sudo apt update
 
-
   sudo apt install -y docker.io
-
 
   sudo usermod -aG docker $USER
 
-
   newgrp docker```
 
-3. 작업 이미지 생성
-   docker build -t f1tenth:sim -f Dockerfile.sim .
+2. 작업 이미지 생성
 
-4. 화면 권한 허용
-   xhost +local:docker
+   ```docker build -t f1tenth:sim -f Dockerfile.sim .```
 
-5. 컨테이너 실행
-   docker run -it \
+3. 화면 권한 허용
+
+   ```xhost +local:docker```
+
+4. 컨테이너 실행
+
+   ```docker run -it \
     --net=host \
     --privileged \
     --env="DISPLAY" \
@@ -41,4 +41,4 @@
     --volume="$(pwd):/root/f1_team_5" \
     --name my_f1_sim \
     --rm \
-    f1tenth:sim
+    f1tenth:sim```
